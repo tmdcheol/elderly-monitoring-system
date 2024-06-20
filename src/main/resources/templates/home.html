@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+
+    <div class="jumbotron">
+        <p class="lead">회원 기능</p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/members/new">로그인</a>
+        </p>
+        <p class="lead">카메라 기능</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/items/new">카메라 켜기</a>
+            <a class="btn btn-lg btn-dark" href="/items">카메라 목록</a>
+        </p>
+        <p class="lead">스트리밍 기능</p>
+        <p>
+            <a class="btn btn-lg btn-info" href="/orders">스트리밍 목록</a>
+        </p>
+    </div>
+
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+</body>
+</html>
