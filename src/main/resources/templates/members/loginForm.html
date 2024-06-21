@@ -5,6 +5,12 @@
     .fieldError {
         border-color: #bd2130;
     }
+    .small-link {
+        font-size: 0.875em; /* 작은 글씨 크기 설정 */
+        position: absolute;
+        right: 420px; /* 오른쪽에 배치 */
+        bottom: 320px; /* 아래에 배치 */
+    }
 </style>
 <body>
 
@@ -26,15 +32,10 @@
                        th:class="${#fields.hasErrors('password')}? 'form-control fieldError' : 'form-control'">
                 <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Incorrect data</p>
             </div>
-
+            <hr class="my-4">
             <button type="submit" class="btn btn-lg btn-info">로그인</button>
         </form>
-        <hr class="my-4">
-        <p>
-        <div>아이디가 없으시다면?</div>
-        <a class="btn btn-lg btn-info" href="/members/new">회원가입</a>
-        </p>
-
+        <a class="small-link" href="/members/new">아이디가 없으신가요?</a>
     </div>
 
 

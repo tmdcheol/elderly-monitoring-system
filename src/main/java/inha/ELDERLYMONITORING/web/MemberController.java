@@ -1,5 +1,6 @@
 package inha.ELDERLYMONITORING.web;
 
+import inha.ELDERLYMONITORING.common.argumentresolver.Login;
 import inha.ELDERLYMONITORING.domain.Member;
 import inha.ELDERLYMONITORING.service.MemberService;
 import jakarta.validation.Valid;
@@ -48,4 +49,17 @@ public class MemberController {
         model.addAttribute("memberRequest", new MemberRequest());
         return "/members/createMemberForm";
     }
+
+    @GetMapping("/edit")
+    public String edit(@Login Member member) {
+        log.info("회원수정 미구현 ... :회원명={}", member.getEmail());
+        return "redirect:/";
+    }
+
+    @PostMapping("/logout")
+    public String logout(@Login Member member) {
+        log.info("로그아웃 미구현 ... :회원명={}", member.getEmail());
+        return "redirect:/";
+    }
+
 }
