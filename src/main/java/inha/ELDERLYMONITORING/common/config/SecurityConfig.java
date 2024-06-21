@@ -35,8 +35,11 @@ public class SecurityConfig {
                                 .loginProcessingUrl("/members/login")
                                 .defaultSuccessUrl("/", true)
                 )
-                .logout((logoutConfig) ->
-                        logoutConfig.logoutSuccessUrl("/"))
+                .logout((logoutConfigurer) ->
+                        logoutConfigurer
+                                .logoutUrl("/members/logout")
+                                .logoutSuccessUrl("/")
+                                .permitAll())
                 .userDetailsService(userDetailsService);
 
         return http.build();
